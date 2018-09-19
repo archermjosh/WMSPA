@@ -1,0 +1,29 @@
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    background-color: rgb(104, 186, 253);
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2);
+}
+
+#navbar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+#navbar-actions {
+    display: flex;
+    margin: .25em;
+}
+
+#page-title {
+    font-family: Arial, sans-serif;
+}
+
+#content {
+    margin: 10em auto;
+    width: 50%;
+}

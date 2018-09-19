@@ -1,0 +1,24 @@
+<div *ngIf="reservations?.length == 0">
+  <p>No reservations yet!</p>
+</div>
+<div *ngIf="reservations?.length > 0">
+  <h2>Reservations</h2>
+  <mat-grid-list cols="2">
+    <div *ngFor="let reservation of reservations">
+      <mat-grid-tile class="grid-tile">
+        <mat-grid-tile-header>
+          Party Name: {{reservation.partyName}}
+          <div style="position: absolute; right: .3em;">
+            {{reservation.date | date: 'shortDate'}} {{reservation.time}}
+          </div>
+        </mat-grid-tile-header>       
+        <div>Number of Guests: {{reservation.numberOfPeople}}</div>
+        <mat-grid-tile-footer>
+          <button mat-raised-button style="position: absolute; left: .3em;" [disabled]="reservation.completed" (click)="arrived(reservation)">Arrived</button>
+          <button mat-raised-button style="position: absolute; right: .3em;" [disabled]="reservation.completed" (click)="cancel(reservation)">Cancel</button>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </div>
+  </mat-grid-list>
+</div>
+  
